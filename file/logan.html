@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+		<title>Logan Movie | 20th Century Fox | Now on Blu-ray & Digital HD</title>
+
+					<meta name="description" content="Get the latest media, news and trailers for Logan, the third installment of the Wolverine movie series. Coming March 2017.">
+		
+		
+		<link href="http://www.foxmovies.com/images/favicon.ico" rel="shortcut icon">
+		<link href="http://www.foxmovies.com/images/favicon.png" rel="apple-itouch-icon">
+
+		<link href="http://www.foxmovies.com/movies/logan" rel="canonical">
+
+		<link href="http://www.foxmovies.com/mobile/movies/logan" rel="alternate" media="only screen and (max-width: 640px)">
+
+					<link href="//cloud.typography.com/6283492/754624/css/fonts.css" rel="stylesheet">
+					<link href="http://www.foxmovies.com/build/front.min.css" rel="stylesheet">
+					<link href="http://www.foxmovies.com/css/front/film.css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" type="text/css" media="all" href="http://www.foxmovies.com/css/front/ie.css">
+		<![endif]-->
+
+		
+		
+		
+		
+		<meta name="msvalidate.01" content="18C4FA5D338977C15D10C8F4EBFDF4D1">
+
+		
+		<style>
+			.dark-film-text-color
+			{
+				color: #222327 !important;
+				text-shadow: none !important;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+			<script src="http://www.foxmovies.com/libs/html5shiv/html5shiv.min.js"></script>
+		<![endif]-->
+
+								
+			
+
+												<link href="//fast.fonts.net/cssapi/9dd54635-43eb-44a2-bc7e-f29ef6d00efe.css" rel="stylesheet">
+				
+				<style>
+					#content h1,
+					#content h2,
+					#content h3,
+					#content h4,
+					#content h5,
+					#content h6 {
+											font-family: 'Helvetica Neue LT W01_73 Bd Ex';
+															}
+					#content h3 {
+										}
+				</style>
+			
+							
+				<style>
+					#content
+					{
+											font-family: 'Helvetica LT W01 Roman';
+																				}
+				</style>
+			
+										
+
+							<link href="http://s3.foxmovies.com/foxmovies/production/films/132/assets/style.css-8293750047.css" rel="stylesheet">			
+							<style>#tickets {
+	display: none;
+}</style>
+			        
+			</head>
+	<body id="front_film_page">
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KCFKVZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>
+			var dataLayer = [{'UACode':'UA-20019600-11'}];
+        </script>
+
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-KCFKVZ');
+		</script>
+		<!-- End Google Tag Manager -->
+
+		
+					<header id="header">
+									<a href="http://www.foxmovies.com" id="logo"></a>
+					
+				<div id="header_top">
+					<ul id="main-menu" class="clearfix">
+                            						<li id="main_menu_item_in_theaters" data-identifier="in_theaters" class="main-menu-item">
+    							<a href="http://www.foxmovies.com/in-theaters" class="main-menu-item-link nav copa-age-gate-link">In Theaters</a>
+
+    							<div id="main_menu_item_box_in_theaters" class="main-menu-item-box">
+    								<div class="main-menu-movies-container clearfix">
+    <div class="big-mode">
+                    
+        
+            </div>
+
+    <div class="small-mode">
+                    <div class="movie-row clearfix">            <div class="main-menu-movie">
+                <a href="http://www.foxmovies.com/movies/captain-underpants-the-first-epic-movie" id="poster-collapsed--captain-underpants-the-first-epic-movie" class="movie-poster subnav copa-age-gate-link"><img src="http://s3.foxmovies.com/foxmovies/production/films/136/images/posters/520-film-page-thumbnail.jpg" alt="Captain Underpants: The First Epic Movie"></a>
+
+                
+            </div>        
+        
+    </div>
+</div>
+
+    <div class="view-all-container">
+                    <a href="http://www.foxmovies.com/in-theaters">View All</a>
+            </div>
+    							</div>
+    						</li>
+                        
+                            						<li id="main_menu_item_coming_soon" data-identifier="coming_soon" class="main-menu-item">
+    							<a href="http://www.foxmovies.com/coming-soon" class="main-menu-item-link nav copa-age-gate-link">Coming Soon</a>
+
+    							<div id="main_menu_item_box_coming_soon" class="main-menu-item-box">
+    								
+
+    <div class="view-all-container">
+                    <a href="http://www.foxmovies.com/coming-soon">View All</a>
+            </div>
+
+									    							</div>
+    						</li>
+                        
+                            						
+                        
+						<li id="main_menu_item_movies" data-identifier="movies" class="main-menu-item">
+							<a href="http://www.foxmovies.com/movies" class="main-menu-item-link copa-age-gate-link">Movies</a>
+
+							<div id="main_menu_item_box_movies" class="main-menu-item-box">
+								<div class="main-menu-movies-container clearfix">
+                                        									<div class="main-menu-collapsed-movie">
+    										<div class="main-menu-heading-container clearfix">
+    											<span class="main-menu-heading"><span class="main-menu-heading-title">In Theaters</span> | <a href="http://www.foxmovies.com/in-theaters" class="main-menu-heading-view-all-link">View All</a></span>
+    										</div>
+
+    										    											<div class="main-menu-movie">
+    												<a href="http://www.foxmovies.com/movies/captain-underpants-the-first-epic-movie" class="movie-poster"><img src="http://s3.foxmovies.com/foxmovies/production/films/136/images/posters/520-film-page-thumbnail.jpg" alt=""></a>
+
+    												<div class="movie-info">
+    													<span class="movie-release-date">Now Playing</span>
+    													<a href="http://www.foxmovies.com/movies/captain-underpants-the-first-epic-movie" class="movie-title">Captain Underpants: The First Epic Movie</a>
+    												</div>
+    											</div>
+    										    											<div class="main-menu-movie">
+    												<a href="http://www.foxmovies.com/movies/diary-of-a-wimpy-kid-the-long-haul" class="movie-poster"><img src="http://s3.foxmovies.com/foxmovies/production/films/133/images/posters/522-film-page-thumbnail.jpg" alt=""></a>
+
+    												<div class="movie-info">
+    													<span class="movie-release-date">Now Playing</span>
+    													<a href="http://www.foxmovies.com/movies/diary-of-a-wimpy-kid-the-long-haul" class="movie-title">Diary of a Wimpy Kid: The Long Haul</a>
+    												</div>
+    											</div>
+    										    											<div class="main-menu-movie last">
+    												<a href="http://www.foxmovies.com/movies/alien-covenant" class="movie-poster"><img src="http://s3.foxmovies.com/foxmovies/production/films/135/images/posters/525-film-page-thumbnail.jpg" alt=""></a>
+
+    												<div class="movie-info">
+    													<span class="movie-release-date">Now Playing</span>
+    													<a href="http://www.foxmovies.com/movies/alien-covenant" class="movie-title">Alien: Covenant</a>
+    												</div>
+    											</div>
+    										    									</div>
+                                    
+                                        									
+                                        								
+                                    								</div>
+							</div>
+						</li>
+					</ul>
+
+					
+				</div>
+
+				<div id="header_bottom">
+											<ul id="header_bottom_menu">
+                            							    <li class="movie-title"><a href="#front_film_page">Logan</a></li>
+                            
+															
+                                		                            <li><a href="#section_container_featured-videos" class="sub">Videos</a></li>
+                                															
+                                		                            <li><a href="#section_container_battlescars" class="sub">Battle Scars</a></li>
+                                															
+                                		                            <li><a href="#section_container_about" class="sub">About</a></li>
+                                															
+                                		                            <li><a href="#section_container_app" class="sub">Download App</a></li>
+                                															
+                                		                            <li><a href="#section_container_posters" class="sub">Posters</a></li>
+                                															
+                                		                            <li><a href="#section_container_sign-up" class="sub">Sign Up</a></li>
+                                															
+                                		                            <li><a href="#section_container_social-updates" class="sub">Social Updates</a></li>
+                                															
+                                		                            <li><a href="#section_container_related-movies" class="sub">Related Movies</a></li>
+                                															
+                                		                            <li><a href="#section_container_tickets" class="sub">Tickets</a></li>
+                                													</ul>
+									</div>
+			</header>
+		
+		<div id="content">
+			<div class="blur">
+
+					<div id="section_container_film-header">
+				<section id="film_header">
+	
+			<div id="image_container">
+			<img src="http://s3.foxmovies.com/foxmovies/production/films/132/images/feature/logan-all-platforms-front-main-stage.jpg" alt="Logan">
+		</div>
+	
+    	
+
+</section>
+			</div>
+
+		
+	<style>
+	
+	
+	
+	
+			#front_film_page .blur.dark section#featured_videos,
+		section#featured_videos		{
+			background-image: url('http://s3.foxmovies.com/foxmovies/production/films/132/modules/featured_videos/background_image/background-image-front-5687386821.jpg');
+			background-repeat: no-repeat;
+						background-size: cover;
+			
+							background-color: #000000;
+					}
+	</style>
+
+
+
+         
+
+			
+
+			<div class="clear"></div>
+					<div id="section_container_about">
+				<style>
+	
+	
+	
+	
+			#front_film_page .blur.dark section#about,
+		section#about		{
+			background-image: url('http://s3.foxmovies.com/foxmovies/production/films/132/modules/about/background_image/background-image-front-8476926050.jpg');
+			background-repeat: no-repeat;
+						background-size: cover;
+			
+							background-color: #000000;
+					}
+	</style>
+
+
+
+		<script>
+		var current_controller='front';var current_action='film';var current_page='front/film';var BASE_URL='http://www.foxmovies.com';var DEBUG=false;var copa_age_gate_type='';var initially_show_age_gate=false;var initially_show_age_gate_warning=false;var copa_age_gate_film_url='';var updates_images=["http:\/\/www.foxmovies.com\/images\/updates\/assasins.png","http:\/\/www.foxmovies.com\/images\/updates\/deadpool.png","http:\/\/www.foxmovies.com\/images\/updates\/jennifer.png","http:\/\/www.foxmovies.com\/images\/updates\/the-martian.png","http:\/\/www.foxmovies.com\/images\/updates\/x-men-angel.png","http:\/\/www.foxmovies.com\/images\/updates\/x-men.png","http:\/\/www.foxmovies.com\/images\/updates\/xavier.png"];var facebook_app_id=1437422416525408;var responsys_ri='X0Gzc2X%3DWQpglLjHJlTQGrGIIwUiGBcnIh2lDhzdrcv9L6nVwjpnpgHlpgneHmgJoXX0Gzc2X%3DWQpglLjHJlTQGsrzaNizbJPtIaBRuRK0riwSDtDO';var set_date='June 20, 2017 00:00:00';var fandango_date='6/20/2017';var movietickets_date='2017.06.20';var film_release_date='2017-03-03';var film_release_date_number=20170303;var film_slug='logan';var loop_feature_video=false;var isCopa=false;var copa_videos='';var preview_mode=false;var transition_color='#FFFFFF';var film_id=132;var csrf_token='R9jq6iagwo1pf7UU0meftYoSkp6rHG4y6AhEOUnW';	</script>
+
+		<!--[if lt IE 9]>
+			<script src="http://www.foxmovies.com/libs/jquery/jquery.old.min.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+			<script src="http://www.foxmovies.com/libs/jquery/jquery.min.js"></script>
+		<!--<![endif]-->
+
+					<script src="http://www.foxmovies.com/js/partials/age_gate.js"></script>
+					<script src="//forms.foxfilm.com/signupv303.js"></script>
+					<script src="http://www.foxmovies.com/libs/fox/build/fox.min.js"></script>
+					<script src="http://www.foxmovies.com/build/front.min.js"></script>
+					<script src="http://www.foxmovies.com/build/js/front/film.js"></script>
+		
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				
+									"@type": "Movie",
+														"name": "Logan",
+														"image": "http://s3.foxmovies.com/foxmovies/production/films/132/images/feature/home-page-feature-thumbnail-image-front-featured-films-slider-3.jpg",
+														"description": "In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan&#039;s attempts to hide from the world and his legacy are up-ended when a young mutant arrives, being pursued by dark forces.",
+														"productionCompany": {"name":"20th Century Fox","url":"http://www.foxmovies.com/movies/logan","sameAs":["//twitter.com/wolverinemovie","//facebook.com/TheWolverineMovie"]},
+														"datePublished": "2017-03-03",
+														"trailer": {"@type":"VideoObject","embedURL":"https://www.youtube.com/watch?v=RH3OxVFvTeg","name":"Logan Trailer","thumbnail":"//i.ytimg.com/vi/RH3OxVFvTeg/mqdefault.jpg"},
+														"actor": [],
+														"character": [],
+														"author": [{"@type":"Person","name":"Michael Green and Scott Frank & James Mangold"}],
+														"producer": [{"@type":"Person","name":"Hutch Parker, p.g.a., Simon Kinberg, p.g.a., Lauren Shuler Donner"}],
+														"genre": ["Action","Adventure"]
+												}
+		</script>
+
+					<script src="http://s3.foxmovies.com/foxmovies/production/films/132/assets/script.js-9694951129.js"></script>		
+        		<!-- Twitter -->
+		<script type="text/javascript">//<![CDATA[
+			(function()
+			{
+				var twitter_script_tag = document.createElement('script');
+				twitter_script_tag.type = 'text/javascript';
+				twitter_script_tag.async = true;
+				twitter_script_tag.src = '//platform.twitter.com/widgets.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(twitter_script_tag, s);
+			})();
+			//]]></script>
+
+		<!-- Facebook -->
+		<script>
+			// SHOW SOCIAL LIKE/SHARE IN HEADER
+			$(function()
+			{
+				$('#header, #footer').find('.social-icons > li').hover(function()
+				{
+					$(this).addClass('open');//.children('.share-links').show();
+				}, function()
+				{
+					$(this).removeClass('open');//.children('.share-links').hide();
+				});
+
+			});
+		</script>
+
+		
+		
+        
+			<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"21de4c302c","applicationID":"33387953","transactionName":"M1xaMRdXWhdTU0NYXgoWeQYRX1sKHXZFXl8QelcLEURbCF5VRXFXDVVV","queueTime":0,"applicationTime":555,"atts":"HxtZR19NSRk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+<!-- Tickets -->
